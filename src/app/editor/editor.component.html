@@ -1,0 +1,15 @@
+<div class="editor-container">
+  <mat-form-field appearance="outline">
+    <mat-label>Enter a title</mat-label>
+    <input matInput [(ngModel)]="title">
+  </mat-form-field>
+
+  <div class="dynamic-textbox">
+    <div class="editable-div" contenteditable="true" (input)="onContentInput($event)" #editableDiv>
+    </div>
+    <mat-icon class="btn" (click)="fileInput.click()">add_circle_outline</mat-icon>
+    <input type="file" #fileInput (change)="onFileSelected($event)" style="display: none;" accept="image/*">
+  </div>
+
+  <button mat-button color="primary" (click)="openDialog()">Publish</button>
+</div>
